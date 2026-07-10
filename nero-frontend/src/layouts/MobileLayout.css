@@ -1,0 +1,99 @@
+.mobile-layout {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  padding: 24px;
+  max-width: 480px;
+  margin: 0 auto;
+  position: relative;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 16px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1); /* Subtle separator if needed, or remove */
+}
+
+.logo-container {
+  display: flex;
+  align-items: flex-start;
+  position: relative;
+}
+
+.logo {
+  font-size: 28px;
+  font-weight: 400;
+  letter-spacing: 2px;
+  margin: 0;
+  border-bottom: 2px solid white; /* The underline under NERO */
+  line-height: 1.2;
+}
+
+.copyright-symbol {
+  font-size: 10px;
+  position: absolute;
+  right: -12px;
+  top: 0px;
+}
+
+.menu-button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.main-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  margin-top: 60px;
+}
+
+.hero {
+  display: flex;
+  flex-direction: column;
+  gap: 100px;
+}
+
+.hero-title {
+  font-size: 38px;
+  font-weight: 700;
+  line-height: 1.1;
+  margin: 0;
+}
+
+.text-white {
+  color: #ffffff;
+}
+
+.text-purple {
+  color: #9b72ff; /* Adjust to match the exact purple */
+}
+
+.hero-description {
+  font-size: 14px;
+  line-height: 1.5;
+  color: rgba(255, 255, 255, 0.6);
+  max-width: 300px;
+  margin: 0 auto;
+  font-weight: 300;
+}
+
+.footer-indicator {
+  display: flex;
+  justify-content: center;
+  padding: 40px 0 20px;
+}
+
+.scroll-icon {
+  /* You can add a subtle bounce animation here later */
+}
