@@ -1,6 +1,7 @@
 import { Menu, ArrowDownCircle } from "lucide-react";
 import WorkSection from "../components/sections/WorkSection";
 import MainPage from "../components/sections/MainPage";
+import TestimonialsSection from "../components/sections/TestimonialsSection";
 import "./MobileLayout.css";
 
 const MobileLayout = () => {
@@ -51,6 +52,9 @@ const MobileLayout = () => {
 
         {/* What We Create Section */}
         <MainPage />
+
+        {/* Client Testimonials Section */}
+        <TestimonialsSection />
       </main>
     </div>
   );
