@@ -1,5 +1,9 @@
 import "./MainPage.css";
 import { ArrowRightCircle } from "lucide-react";
+import developmentBackground from "../../assets/images/webSitesAndDevelope1.png";
+import cybersecurityBackground from "../../assets/images/Cybersecurity2.png";
+import designBackground from "../../assets/images/UiUxDesign3.png";
+import businessBackground from "../../assets/images/bisnees4.png";
 
 const creations = [
   {
@@ -14,7 +18,8 @@ const creations = [
       "Platform Development",
       "Custom example development",
     ],
-    backgroundClass: "bg-red",
+    backgroundClass: "bg-development",
+    backgroundImage: developmentBackground,
   },
   {
     id: 2,
@@ -23,7 +28,8 @@ const creations = [
     description:
       "Enterprise-grade security architectures designed to safeguard digital assets and fortify your infrastructure. We combine proactive threat intelligence with rigorous defense protocols - without sacrificing system agility or user experience",
     tags: ["Custom systems"],
-    backgroundClass: "bg-dark",
+    backgroundClass: "bg-cybersecurity",
+    backgroundImage: cybersecurityBackground,
   },
   {
     id: 3,
@@ -32,12 +38,13 @@ const creations = [
     description:
       "Sophisticated digital interfaces designed to elevate brand perception and drive meaningful user engagement. We combine striking visual aesthetics with intuitive, data-driven architecture - without sacrificing conversion metrics or platform performance",
     tags: ["UI/UX Design", "Custom Design"],
-    backgroundClass: "bg-black-metal",
+    backgroundClass: "bg-design",
+    backgroundImage: designBackground,
   },
   {
     id: 4,
     title: "Business solutions",
-    number: "04", // Змінив на 04, бо на скріні було 03 двічі
+    number: "04",
     description:
       "Tailored enterprise solutions designed to digitize operations and scale business efficiency. We combine advanced process automation with data-driven infrastructure - without sacrificing operational continuity",
     tags: [
@@ -45,7 +52,8 @@ const creations = [
       "ERP & CRM Integration",
       "Legacy System Migration",
     ],
-    backgroundClass: "bg-office",
+    backgroundClass: "bg-business",
+    backgroundImage: businessBackground,
   },
 ];
 
@@ -64,6 +72,7 @@ const MainPage = () => {
             key={item.id}
             className={`stack-card ${item.backgroundClass}`}
             style={{
+              backgroundImage: `linear-gradient(180deg, rgba(0, 0, 0, 0.12) 0%, rgba(0, 0, 0, 0.92) 100%), url("${item.backgroundImage}")`,
               top: `${index * 40}px`, // Кожна наступна картка нижче на 40px, щоб було видно верхівки (sticky)
               zIndex: index + 1, // Нижні картки перекривають верхні
             }}
