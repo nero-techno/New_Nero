@@ -1,6 +1,12 @@
 import { Menu, ArrowDownCircle } from "lucide-react";
+import { motion } from "motion/react";
 import WorkSection from "../components/sections/WorkSection";
 import MainPage from "../components/sections/MainPage";
+import TestimonialsSection from "../components/sections/TestimonialsSection";
+import TeamSection from "../components/sections/TeamSection";
+import BrandSection from "../components/sections/BrandSection";
+// import ScrollWordReveal from "../components/sections/ScrollWordReveal";
+import FlipText from "../components/ui/FlipText";
 import "./MobileLayout.css";
 
 const MobileLayout = () => {
@@ -20,20 +26,64 @@ const MobileLayout = () => {
       {/* Main Content */}
       <main className="main-content">
         <section className="hero">
-          <h2 className="hero-title">
-            <span className="text-white">NECESSITY</span>
+          <motion.h2
+            className="hero-title"
+            initial="hidden"
+            animate="visible"
+            variants={{
+              hidden: {},
+              visible: { transition: { staggerChildren: 0.12 } },
+            }}
+          >
+            <motion.span
+              className="text-white hero-flip-line"
+              variants={{
+                hidden: { opacity: 0, y: 24 },
+                visible: { opacity: 1, y: 0 },
+              }}
+            >
+              <FlipText
+                words={[
+                  "NECESSITY",
+                  "WEB DEV",
+                  "UI/UX DESIGN",
+                  "CYBERSECURITY",
+                ]}
+              />
+            </motion.span>
             <br />
-            <span className="text-white">FOR YOUR</span>
+            <motion.span
+              className="text-white"
+              variants={{
+                hidden: { opacity: 0, y: 24 },
+                visible: { opacity: 1, y: 0 },
+              }}
+            >
+              FOR YOUR
+            </motion.span>
             <br />
-            <span className="text-purple">BUSINESS</span>
-          </h2>
+            <motion.span
+              className="text-purple"
+              variants={{
+                hidden: { opacity: 0, y: 24 },
+                visible: { opacity: 1, y: 0 },
+              }}
+            >
+              BUSINESS
+            </motion.span>
+          </motion.h2>
 
-          <p className="hero-description">
+          <motion.p
+            className="hero-description"
+            initial={{ opacity: 0, y: 24 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.7, delay: 0.5 }}
+          >
             We are a digital product studio for companies which see engineering
             and design as their competitive advantage. From local AI models to
             scalable applications, we build products where world-class
             aesthetics meet robust infrastructure
-          </p>
+          </motion.p>
         </section>
 
         {/* Footer / Scroll Down Indicator */}
@@ -49,8 +99,20 @@ const MobileLayout = () => {
         {/* Work Section */}
         <WorkSection />
 
+        {/* Brand Section */}
+        <BrandSection />
+
         {/* What We Create Section */}
         <MainPage />
+
+        {/* Scroll Word Reveal Section */}
+        {/* <ScrollWordReveal /> */}
+
+        {/* Client Testimonials Section */}
+        <TestimonialsSection />
+
+        {/* Team Section */}
+        <TeamSection />
       </main>
     </div>
   );

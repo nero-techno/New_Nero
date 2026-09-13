@@ -1,4 +1,6 @@
 import { ArrowRightCircle } from "lucide-react";
+import { motion } from "motion/react";
+import ScrollReveal from "../ui/ScrollReveal";
 import "./WorkSection.css";
 import ukritarmImg from "../../assets/images/Ukritarm.png";
 import chilliImg from "../../assets/images/CHILLI GRILLI.png";
@@ -35,15 +37,26 @@ const works = [
 const WorkSection = () => {
   return (
     <section className="work-section">
-      <h2 className="work-title">WORK</h2>
-      <p className="work-subtitle">
-        Our work is built to meet the technical demands of industry-leading
-        brands
-      </p>
+      <ScrollReveal>
+        <h2 className="work-title">WORK</h2>
+      </ScrollReveal>
+      <ScrollReveal delay={0.1}>
+        <p className="work-subtitle">
+          Our work is built to meet the technical demands of industry-leading
+          brands
+        </p>
+      </ScrollReveal>
 
       <div className="work-list">
-        {works.map((work) => (
-          <div key={work.id} className="work-card">
+        {works.map((work, index) => (
+          <motion.div
+            key={work.id}
+            className="work-card"
+            initial={{ opacity: 0, y: 36 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.15 }}
+            transition={{ duration: 0.6, delay: index * 0.08 }}
+          >
             {/* Контейнер для фону / зображення */}
             <div className="work-image-placeholder">
               <img src={work.image} alt={work.title} className="work-image" />
@@ -54,7 +67,7 @@ const WorkSection = () => {
               <span className="work-card-title">{work.title}</span>
               <span className="work-card-tag">{work.tag}</span>
             </div>
-          </div>
+          </motion.div>
         ))}
       </div>
 

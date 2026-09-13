@@ -1,0 +1,61 @@
+.brand-section {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  min-height: 300px;
+  padding: 56px 0 64px;
+  overflow: hidden;
+  background: #060117;
+}
+
+.brand-lockup {
+  position: relative;
+  width: 100%;
+  padding: 0 20px;
+  text-align: center;
+}
+
+.brand-name {
+  display: flex;
+  justify-content: center;
+  color: #ffffff;
+  font-size: clamp(58px, 17vw, 86px);
+  font-weight: 300;
+  letter-spacing: 0.015em;
+  line-height: 0.95;
+}
+
+.brand-name span {
+  display: inline-block;
+  text-shadow: 0 0 22px rgba(255, 255, 255, 0.08);
+}
+
+.brand-subtitle {
+  margin-top: 8px;
+  color: #ffffff;
+  font-size: clamp(20px, 6vw, 30px);
+  font-weight: 300;
+  line-height: 1;
+  text-align: right;
+  white-space: nowrap;
+}
+
+.brand-scan-line {
+  display: block;
+  width: 72%;
+  height: 1px;
+  margin: 20px auto 0;
+  background: linear-gradient(90deg, transparent, #9b72ff, transparent);
+  transform-origin: center;
+  box-shadow: 0 0 14px rgba(155, 114, 255, 0.7);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .brand-name span,
+  .brand-subtitle,
+  .brand-scan-line {
+    animation: none;
+    transition: none;
+  }
+}

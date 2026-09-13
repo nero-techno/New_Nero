@@ -1,5 +1,7 @@
 import "./MainPage.css";
 import { ArrowRightCircle } from "lucide-react";
+import { motion } from "motion/react";
+import ScrollReveal from "../ui/ScrollReveal";
 import developmentBackground from "../../assets/images/webSitesAndDevelope1.png";
 import cybersecurityBackground from "../../assets/images/Cybersecurity2.png";
 import designBackground from "../../assets/images/UiUxDesign3.png";
@@ -27,7 +29,13 @@ const creations = [
     number: "02",
     description:
       "Enterprise-grade security architectures designed to safeguard digital assets and fortify your infrastructure. We combine proactive threat intelligence with rigorous defense protocols - without sacrificing system agility or user experience",
-    tags: ["Custom systems"],
+    tags: [
+      "Custom systems",
+      "Security Strategy",
+      "Physical Security",
+      "Cyber Audit",
+      "Network Security",
+    ],
     backgroundClass: "bg-cybersecurity",
     backgroundImage: cybersecurityBackground,
   },
@@ -60,19 +68,27 @@ const creations = [
 const MainPage = () => {
   return (
     <section className="MainPage-section">
-      <h2 className="MainPage-title">WHAT WE CREATE</h2>
-      <p className="MainPage-subtitle">
-        We focus on the intersection of needs and technical complexity – where
-        our approach creates the most value for digital products
-      </p>
+      <ScrollReveal>
+        <h2 className="MainPage-title">WHAT WE CREATE</h2>
+      </ScrollReveal>
+      <ScrollReveal delay={0.1}>
+        <p className="MainPage-subtitle">
+          We focus on the intersection of needs and technical complexity – where
+          our approach creates the most value for digital products
+        </p>
+      </ScrollReveal>
 
       <div className="cards-stack-container">
         {creations.map((item, index) => (
-          <div
+          <motion.div
             key={item.id}
             className={`stack-card ${item.backgroundClass}`}
+            initial={{ opacity: 0, y: 40 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.12 }}
+            transition={{ duration: 0.65, delay: index * 0.08 }}
             style={{
-              backgroundImage: `linear-gradient(180deg, rgba(0, 0, 0, 0.12) 0%, rgba(0, 0, 0, 0.92) 100%), url("${item.backgroundImage}")`,
+              backgroundImage: `linear-gradient(180deg, rgba(0, 0, 0, 0.48) 0%, rgba(0, 0, 0, 0.9) 68%, rgba(0, 0, 0, 0.97) 100%), url("${item.backgroundImage}")`,
               top: `${index * 40}px`, // Кожна наступна картка нижче на 40px, щоб було видно верхівки (sticky)
               zIndex: index + 1, // Нижні картки перекривають верхні
             }}
@@ -93,7 +109,7 @@ const MainPage = () => {
                 ))}
               </div>
             </div>
-          </div>
+          </motion.div>
         ))}
       </div>
 
