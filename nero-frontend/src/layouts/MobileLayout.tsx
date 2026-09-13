@@ -4,6 +4,8 @@ import WorkSection from "../components/sections/WorkSection";
 import MainPage from "../components/sections/MainPage";
 import TestimonialsSection from "../components/sections/TestimonialsSection";
 import TeamSection from "../components/sections/TeamSection";
+import BrandSection from "../components/sections/BrandSection";
+// import ScrollWordReveal from "../components/sections/ScrollWordReveal";
 import FlipText from "../components/ui/FlipText";
 import "./MobileLayout.css";
 
@@ -97,8 +99,14 @@ const MobileLayout = () => {
         {/* Work Section */}
         <WorkSection />
 
+        {/* Brand Section */}
+        <BrandSection />
+
         {/* What We Create Section */}
         <MainPage />
+
+        {/* Scroll Word Reveal Section */}
+        {/* <ScrollWordReveal /> */}
 
         {/* Client Testimonials Section */}
         <TestimonialsSection />

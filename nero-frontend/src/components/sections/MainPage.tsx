@@ -29,7 +29,13 @@ const creations = [
     number: "02",
     description:
       "Enterprise-grade security architectures designed to safeguard digital assets and fortify your infrastructure. We combine proactive threat intelligence with rigorous defense protocols - without sacrificing system agility or user experience",
-    tags: ["Custom systems"],
+    tags: [
+      "Custom systems",
+      "Security Strategy",
+      "Physical Security",
+      "Cyber Audit",
+      "Network Security",
+    ],
     backgroundClass: "bg-cybersecurity",
     backgroundImage: cybersecurityBackground,
   },
@@ -82,7 +88,7 @@ const MainPage = () => {
             viewport={{ once: true, amount: 0.12 }}
             transition={{ duration: 0.65, delay: index * 0.08 }}
             style={{
-              backgroundImage: `linear-gradient(180deg, rgba(0, 0, 0, 0.12) 0%, rgba(0, 0, 0, 0.92) 100%), url("${item.backgroundImage}")`,
+              backgroundImage: `linear-gradient(180deg, rgba(0, 0, 0, 0.48) 0%, rgba(0, 0, 0, 0.9) 68%, rgba(0, 0, 0, 0.97) 100%), url("${item.backgroundImage}")`,
               top: `${index * 40}px`, // Кожна наступна картка нижче на 40px, щоб було видно верхівки (sticky)
               zIndex: index + 1, // Нижні картки перекривають верхні
             }}
