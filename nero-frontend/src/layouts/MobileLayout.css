@@ -27,7 +27,6 @@
   font-weight: 400;
   letter-spacing: 2px;
   margin: 0;
-  border-bottom: 2px solid white; /* The underline under NERO */
   line-height: 1.2;
 }
 
@@ -73,6 +72,39 @@
 
 .text-white {
   color: #ffffff;
+}
+
+.hero-flip-line {
+  position: relative;
+  top: 2.8rem;
+  display: block;
+  perspective: 700px;
+}
+
+.flip-text {
+  display: inline-block;
+  min-width: 12.5ch;
+  line-height: 1.1;
+}
+
+.flip-text-window {
+  position: relative;
+  display: inline-flex;
+  height: 1.1em;
+  min-width: 100%;
+  overflow: hidden;
+  justify-content: center;
+  vertical-align: top;
+  perspective: 700px;
+}
+
+.flip-text-word {
+  position: absolute;
+  inset: 0;
+  display: block;
+  white-space: nowrap;
+  transform-origin: center center;
+  will-change: transform, opacity;
 }
 
 .text-purple {
